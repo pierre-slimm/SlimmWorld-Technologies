@@ -75,35 +75,47 @@ nav .container {
     color: #9715ca;
 }
 
-/* Dropdown Content (hidden by default) */
+/* Dropdown Content */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    width: max-content;
+    min-width: 200px;
     top: 100%; /* Positions submenu directly below the parent */
     left: 0;
     z-index: 1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-/* Dropdown Links */
-.dropdown-content li a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content li a:hover {
-    background-color: #f1f1f1;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* Services List */
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px 20px; /* Row and column gaps */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Services List Items */
+.services-list li a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.services-list li a:hover {
+    color: #00aaff;
 }
 
 /* Hamburger Menu Icon */
@@ -148,6 +160,24 @@ nav .container {
 
     .nav-links a {
         font-size: 18px;
+    }
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding: 10px 0;
+        display: none; /* Hidden by default, toggled via JavaScript or checkbox */
+    }
+    
+    /* Show dropdown when active (if using checkbox for toggle) */
+    .nav-links li.dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    /* Adjust services list to single column */
+    .services-list {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 10px 0;
     }
 }
 
