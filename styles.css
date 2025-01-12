@@ -117,7 +117,23 @@ nav .container {
 .services-list li a:hover {
     color: #00aaff;
 }
+/* Services List Icons */
+.services-list li a i {
+    margin-right: 8px;           /* Space between icon and text */
+    color: #00aaff;              /* Icon color */
+    font-size: 1.2em;            /* Adjust size as needed */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
 
+/* Change icon color on hover */
+.services-list li a:hover i {
+    color: #9715ca; /* Hover color */
+}
+
+/* Optional: Add subtle animation on hover */
+.services-list li a i:hover {
+    transform: scale(1.1);
+}
 /* Hamburger Menu Icon */
 .menu-icon {
     display: none;
