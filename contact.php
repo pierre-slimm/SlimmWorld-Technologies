@@ -1,11 +1,11 @@
 <?php
 
 // **Database Configuration**
-$dbHost     = "127.0.0.1";          // Hostname of your PostgreSQL server
+$dbHost     = "localhost";          // Hostname of your PostgreSQL server
 $dbPort     = "5432";               // Default PostgreSQL port
 $dbName     = "contact";            // Name of your PostgreSQL database
-$dbUser     = "contact_us";         // Database username
-$dbPassword = "Slimmworld25";       // Database password
+$dbUser     = "postgres";         // Database username
+$dbPassword = "xxxxxxx";       // Database password
 
 // **Email Configuration**
 $recipientEmail = "slimmworldtechnologies21@gmail.com";
