@@ -1,0 +1,567 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap');
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+/* Logo */
+.logo img {
+    height: 80px;
+    transition: height var(--transition-speed) ease;
+    border-radius: 8px;
+  }
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: #080808;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #9715ca;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Hide the checkbox */
+#menu-checkbox {
+    display: none;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #363f47;
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        max-height: 500px; /* Arbitrary large value to show menu */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+}
+
+/* Header Styles (Hero Section) */
+header {
+    position: relative;
+    background: url('img/ITSOLUTIONS.jpg') center/cover no-repeat;
+    height: 100vh; /* Full viewport height */
+    color: #e6e6eb; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Place above the overlay */
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 3rem; /* 48px */
+    margin-bottom: 1.25rem; /* 20px */
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.5rem; /* 24px */
+    margin-bottom: 1.875rem; /* 30px */
+    color: #ddd;
+}
+
+.btn {
+    background-color: #00aaff; /* Primary color */
+    color: #fff; /* Text color */
+    padding: 0.75rem 1.875rem; /* Vertical and horizontal padding */
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    font-size: 1.125rem; /* Button font size */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.btn:hover {
+    background-color: #0088cc; /* Darker primary color on hover */
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #004080;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #00aaff;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Services Section */
+#services {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-item {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    width: calc(33.333% - 20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-item i {
+    font-size: 40px;
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #004080;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Responsive Services Grid */
+@media (max-width: 992px) {
+    .service-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-item {
+        width: 100%;
+    }
+}
+
+/* About Section */
+#about {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #004080;
+}
+
+.about-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-text .btn {
+    background-color: #00aaff;
+}
+
+.about-text .btn:hover {
+    background-color: #0088cc;
+}
+
+/* Responsive About Section */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        padding: 20px 0;
+    }
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 250px;
+    font-size: 18px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.contact-info i {
+    color: #00aaff;
+    margin-right: 10px;
+}
+
+.contact-info a {
+    color: #004080;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #00aaff;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #004080;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00aaff;
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0088cc;
+}
+
+/* Responsive Contact Section */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+}
+/* FAQ Section */
+.faq-section {
+    padding: 80px 20px;
+    background-color: #f4f4f9; /* Light background for contrast */
+    font-family: 'Poppins', sans-serif; /* Consistent with your imported font */
+  }
+  
+  /* Container to center content and limit width */
+  .faq-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Section Title */
+  .page-banner {
+    background-color: #231380; /* Matching the color scheme */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .page-banner h1 {
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  /* Individual FAQ Item */
+  .faq-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover Effect for FAQ Items */
+  .faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* FAQ Question */
+  .faq-item h2 {
+    font-size: 20px;
+    margin: 0;
+    padding: 20px 30px;
+    background-color: #1f1974;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Plus Icon for Accordion */
+  .faq-item h2::after {
+    content: '\f067'; /* Font Awesome plus icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Rotate Icon When Active */
+  .faq-item.active h2::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  
+  /* FAQ Answer */
+  .faq-item p {
+    padding: 0 30px 20px 30px;
+    margin: 0;
+    color: #555;
+    display: none; /* Hidden by default */
+    line-height: 1.6;
+  }
+  
+  /* Show Answer When Active */
+  .faq-item.active p {
+    display: block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .faq-section {
+      padding: 60px 10px;
+    }
+  
+    .page-banner h1 {
+      font-size: 28px;
+    }
+  
+    .faq-item h2 {
+      font-size: 18px;
+      padding: 15px 20px;
+    }
+  
+    .faq-item p {
+      padding: 0 20px 15px 20px;
+    }
+  }
+/* Footer */
+footer {
+    background-color: #004080;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+.footer-container p {
+    font-size: 16px;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00aaff;
+}
+
+/* Current Year Adjustment */
+#current-year::before {
+    content: attr(data-year);
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 2.5rem; /* 40px */
+    }
+
+    .hero-content p {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+
+    .about-text h2,
+    .section-title {
+        font-size: 28px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+    }
+}

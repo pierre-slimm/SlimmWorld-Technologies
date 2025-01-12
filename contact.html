@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slimmworld Technologies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Slimmworld Technologies - Expert IT Consultants for Your Home and Business.">
+    <meta name="keywords" content="IT Consultancy, Graphic Design, Website Development, ICT Training, Software Development, Network Installation, Computer Repair, Remote Support">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+   
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+              <!-- Updated logo area -->
+              <a href="index.html">
+                <img src="img/logo.PNG" alt="SLIMMWORLD logo">
+              </a>
+            </div>
+            <input type="checkbox" id="menu-checkbox">
+            <span class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i></span>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">IT Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">Faqs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section (Hero) -->
+    <header id="home">
+        <div class="hero">
+            <div class="hero-content">
+                <h2>Professional IT Consultancy</h2>
+                <p>Expert IT consultant for Your Home and Business</p>
+                <a href="#services" class="btn">Explore Services</a>
+            </div>
+        </div>
+    </header>
+
+   
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:slimmworldtechnologies21@gmail.com">slimmworldtechnologies21@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> Phone: +254-723-440-442</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: 105 Kanyariri, Lower Kabete</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form action="submit.php" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                    <div class="message" id="formMessage"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; <span id="current-year"></span> SlimmWorld Technologies. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
