@@ -495,7 +495,7 @@ header::after {
   
   /* Section Title */
   .page-banner {
-    background-color: #231380; /* Matching the color scheme */
+    background-color: #186eb4; /* Matching the color scheme */
     color: #fff;
     padding: 40px 20px;
     text-align: center;
@@ -527,7 +527,7 @@ header::after {
     font-size: 20px;
     margin: 0;
     padding: 20px 30px;
-    background-color: #1f1974;
+    background-color: #074980;
     color: #fff;
     cursor: pointer;
     position: relative;
