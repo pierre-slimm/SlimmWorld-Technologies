@@ -1,11 +1,12 @@
 <?php
+header('Content-Type: application/json'); // Set response type to JSON
 
 // **Database Configuration**
 $dbHost     = "localhost";          // Hostname of your PostgreSQL server
 $dbPort     = "5432";               // Default PostgreSQL port
 $dbName     = "contact";            // Name of your PostgreSQL database
-$dbUser     = "postgres";         // Database username
-$dbPassword = "xxxxxxx";       // Database password
+$dbUser     = "postgres";           // Database username
+$dbPassword = "Slimmworld25";            // Database password
 
 // **Email Configuration**
 $recipientEmail = "slimmworldtechnologies21@gmail.com";
@@ -18,7 +19,7 @@ $recaptchaSecret = "YOUR_SECRET_KEY_HERE"; // Replace with your actual secret ke
 try {
     // Data Source Name (DSN) for PostgreSQL
     $dsn = "pgsql:host=$dbHost;port=$dbPort;dbname=$dbName;";
-    
+
     // Create a new PDO instance
     $pdo = new PDO($dsn, $dbUser, $dbPassword, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Enable exceptions for errors
@@ -32,6 +33,42 @@ try {
         "message" => "Internal Server Error. Please try again later."
     ]);
     exit; // Terminate script execution
+}
+
+// **Function to Sanitize Inputs**
+function sanitizeInput($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    // Convert special characters to HTML entities to prevent XSS
+    $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+    return $data;
+}
+
+// **Function to Verify reCAPTCHA Response**
+function verifyReCAPTCHA($response, $secret) {
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+
+    // Prepare data for POST request
+    $data = [
+        'secret' => $secret,
+        'response' => $response
+    ];
+
+    // Initialize cURL session
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    if ($result === false) {
+        return false;
+    }
+
+    $resultData = json_decode($result, true);
+    return isset($resultData['success']) && $resultData['success'] === true;
 }
 
 // **Handle Form Submission**
@@ -140,54 +177,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Invalid Request Method
+    http_response_code(405);
     echo json_encode([
         "status" => "error",
-        "message" => "Invalid request method."
+        "message" => "Method Not Allowed"
     ]);
 }
-
-// **Function to Sanitize Inputs**
-function sanitizeInput($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    // Convert special characters to HTML entities to prevent XSS
-    $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
-    return $data;
-}
-
-// **Function to Verify reCAPTCHA Response**
-function verifyReCAPTCHA($response, $secret) {
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
-    
-    // Make and decode POST request:
-    $data = [
-        'secret' => $secret,
-        'response' => $response
-    ];
-
-    // Using cURL
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-
-    $result = curl_exec($ch);
-    curl_close($ch);
-
-    if ($result === false) {
-        return false;
-    }
-
-    $resultData = json_decode($result, true);
-    return isset($resultData['success']) && $resultData['success'] === true;
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Handle form submission
-} else {
-    // Return 405 Method Not Allowed
-    http_response_code(405);
-    echo "Method Not Allowed";
-}
-
 ?>

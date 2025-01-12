@@ -146,7 +146,21 @@ nav .container {
 #menu-checkbox {
     display: none;
 }
+/* Hamburger icon styling */
+#menu-icon {
+    cursor: pointer;
+    /* Additional styling */
+}
 
+/* Responsive behavior */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex !important; /* Override for larger screens */
+    }
+    #menu-icon {
+        display: none;
+    }
+}
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
     .menu-icon {
