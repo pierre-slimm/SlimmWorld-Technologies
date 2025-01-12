@@ -26,7 +26,14 @@
             <span class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i></span>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#services">IT Services</a></li>
+                <li class="dropdown">
+                    <a href="#services" class="dropbtn">IT Services</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="faqs.html">Faqs</a></li>
@@ -57,16 +64,36 @@
                     <p><i class="fas fa-phone"></i> Phone: +254-723-440-442</p>
                     <p><i class="fas fa-map-marker-alt"></i> Address: 105 Kanyariri, Lower Kabete</p>
                 </div>
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form action="submit.php" method="POST">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
-                    <div class="message" id="formMessage"></div>
-                </div>
+                <div class="red-bar pt-4 mt-3 pb-4 mb-3">
+                    <form method="post" action="/contact" id="contactForm">
+                            <div class="container contact-form">
+                        <h3><i class="far fa-paper-plane"></i> Send Us a Message</h3>
+                        <div class="row mt-3">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="yourName">Your name *</label>
+                                    <input type="text" class="form-control" id="yourName" name="yourName" placeholder="Name" value="">
+                                                        </div>
+                                <div class="form-group">
+                                    <label for="yourEmail">Your email *</label>
+                                    <input type="email" class="form-control" id="yourEmail" name="yourEmail" placeholder="Email" value="">
+                                                        </div>
+                                <div class="form-group">
+                                    <label for="yourPhone">Your phone</label>
+                                    <input type="text" class="form-control" id="yourPhone" name="yourPhone" placeholder="(123) 456-7890" value="">
+                                                        </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="message">How can we help? *</label>
+                                    <textarea class="form-control" id="yourMessage" name="yourMessage" placeholder="Type your message here" rows="4"></textarea>
+                                                            <div class="g-recaptcha" data-sitekey="6LczCRYTAAAAABUtdubBXOnMtHRYZTFrrZ4ncvdy"></div>
+                                                        </div>
+                            </div>
+                        </div>
+                        <button type="submit" name="a" value="submit" class="btn btn-light mr-3">Submit</button> <em>* Required fields</em>
+                    </div>
+                </form>    </div>
             </div>
         </div>
     </section>
