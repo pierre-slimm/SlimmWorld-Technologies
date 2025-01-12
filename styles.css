@@ -391,7 +391,7 @@ header::after {
     background-color: #fff;
 }
 
-.contact-content {
+.contacts-content {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
@@ -399,29 +399,29 @@ header::after {
     justify-content: center;
 }
 
-.contact-info {
+.contacts-info {
     flex: 1;
     min-width: 250px;
     font-size: 18px;
 }
 
-.contact-info p {
+.contacts-info p {
     margin-bottom: 15px;
     color: #555;
 }
 
-.contact-info i {
+.contacts-info i {
     color: #00aaff;
     margin-right: 10px;
 }
 
-.contact-info a {
+.contacts-info a {
     color: #004080;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.contact-info a:hover {
+.contacts-info a:hover {
     color: #00aaff;
 }
 
@@ -586,7 +586,7 @@ header::after {
   }
 /* Footer */
 footer {
-    background-color: #004080;
+    background-color: #5f6266;
     color: #fff;
     padding: 20px 0;
 }
@@ -619,7 +619,40 @@ footer {
 .social-links a:hover {
     color: #00aaff;
 }
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+    justify-content: center;
+}
 
+.contact-info {
+    flex: 1;
+    min-width: 250px;
+    font-size: 18px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: #f0eaea;
+    text-align: center;
+}
+
+.contact-info i {
+    color: #00aaff;
+    margin-right: 10px;
+}
+
+.contact-info a {
+    color: #fafafa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #00aaff;
+}
 /* Current Year Adjustment */
 #current-year::before {
     content: attr(data-year);
